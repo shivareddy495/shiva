@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions xmlns:tns="http://xmlns.example.com/1586772678779" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="http://www.tibco.com/schemas/SampleDB/Schema/Schema1.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Untitled" targetNamespace="http://xmlns.example.com/1586772678779">
+    <wsdl:types>
+        <xs:schema xmlns="http://www.tibco.com/schemas/SampleDB/Schema/Schema1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/schemas/SampleDB/Schema/Schema1.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:element name="Emp_Details">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:input"/>
+                        <xs:element ref="ns0:output"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="empdesignation" type="xs:string"/>
+            <xs:element name="empid" type="xs:string"/>
+            <xs:element name="empname" type="xs:string"/>
+            <xs:element name="input">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:empid"/>
+                        <xs:element ref="ns0:empname"/>
+                        <xs:element ref="ns0:empdesignation"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="output">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="ns0:empid"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:service name="JDBC_WSDL-service0">
+        <wsdl:port name="Jdbc_PortTypeEndpoint0" binding="tns:Jdbc_PortTypeEndpoint0Binding">
+            <soap:address location="http://localhost:8888/WSDL/JDBC_WSDL-service0.serviceagent/Jdbc_PortTypeEndpoint0"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:portType name="Jdbc_PortType">
+        <wsdl:operation name="Jdbc_Operation">
+            <wsdl:input message="tns:Input"/>
+            <wsdl:output message="tns:Output"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="Jdbc_PortTypeEndpoint0Binding" type="tns:Jdbc_PortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Jdbc_Operation">
+            <soap:operation style="document" soapAction="/WSDL/JDBC_WSDL-service0.serviceagent/Jdbc_PortTypeEndpoint0/Jdbc_Operation"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="part1"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="part1"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:message name="Input">
+        <wsdl:part name="part1" element="ns0:input"/>
+    </wsdl:message>
+    <wsdl:message name="Output">
+        <wsdl:part name="part1" element="ns0:output"/>
+    </wsdl:message>
+</wsdl:definitions>

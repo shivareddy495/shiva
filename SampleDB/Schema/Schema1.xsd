@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/SampleDB/Schema/Schema1.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/SampleDB/Schema/Schema1.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="Emp_Details">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="input"/>
+				<xs:element ref="output"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="input">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="empid"/>
+				<xs:element ref="empname"/>
+				<xs:element ref="empdesignation"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="output">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="empid"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="empid" type="xs:string"/>
+	<xs:element name="empname" type="xs:string"/>
+	<xs:element name="empdesignation" type="xs:string"/>
+</xs:schema>

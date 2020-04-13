@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/schemas/SampleDB/Schema/Schema1.xsd" xmlns:tns="http://xmlns.example.com/1586772476974" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.example.com/1586772476974">
+    <import namespace="http://www.tibco.com/schemas/SampleDB/Schema/Schema1.xsd" location="../Schema/Schema1.xsd"/>
+    <message name="Input">
+        <part name="part1" element="ns:input"/>
+    </message>
+    <message name="Output">
+        <part name="part1" element="ns:output"/>
+    </message>
+    <portType name="Jdbc_PortType">
+        <operation name="Jdbc_Operation">
+            <input message="tns:Input"/>
+            <output message="tns:Output"/>
+        </operation>
+    </portType>
+</definitions>
